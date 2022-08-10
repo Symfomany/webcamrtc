@@ -37,7 +37,7 @@ pc.onaddstream = function(obj) {
     vid.src = window.URL.createObjectURL(obj.stream);
 };
 
-navigator.getUserMedia({ video: true }, function(stream) {
+navigator.mediaDevices.getUserMedia({ video: true }, function(stream) {
     var video = document.querySelector('video');
     video.src = window.URL.createObjectURL(stream);
     pc.addStream(stream);
