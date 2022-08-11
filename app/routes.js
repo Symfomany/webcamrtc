@@ -50,8 +50,8 @@ router.get('/test', async(req, res) => {
         });
 
         const mailgun = require("mailgun-js");
-        const DOMAIN = 'sandbox645b6ad773f64f5d90795c49c0614995.mailgun.org';
-        const mg = mailgun({ apiKey: '54bede462c1e580ef96cd95e0767f08c-054ba6b6-1dfa9c8c', domain: DOMAIN });
+        const DOMAIN = process.env.DOMAIN_MAILGUN;
+        const mg = mailgun({ apiKey: process.env.KEY_MAILGUN, domain: DOMAIN });
         const bod = result2.data
         let html = `
             <h3>Hello Taiwa</h3>
