@@ -84,6 +84,7 @@ socket.on('offer-made', function(data) {
 });
 
 socket.on('add-users', function(data) {
+    console.log("add user");
     for (var i = 0; i < data.users.length; i++) {
         var el = document.createElement('div'),
             id = data.users[i];
